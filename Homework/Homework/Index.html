@@ -66,12 +66,13 @@
             var add = $('#prod').val();
             $.getJSON(uri + "/" + id)
           .done(function (data) {
-              $("#prodm").text(formatItem(data));
               $.each(data, function (key, item) {
+                  $("#prodm").text(formatItem(data));
                   $('<li>', { text: formatItem(item) }).appendTo($('#cars'));
-          })
+              })
           .fail(function (jqXHR, textStatus, err) {
               $("#prodm").text('Error: ' + err);
+          });
           });
         }
     </script>
