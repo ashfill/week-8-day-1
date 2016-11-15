@@ -10,7 +10,7 @@ namespace Homework.Controllers
 {
     public class ProductsController : ApiController
     {
-        Product[] cars = new Product[]
+        List<Product> cars = new List<Product>
         {
            new Product {ID = 1, Make = "Suburu", Model = "WRX", Price = 35.000m },
            new Product {ID = 2, Make = "Audi", Model = "S7", Price = 40.000m },
@@ -39,6 +39,10 @@ namespace Homework.Controllers
                 return NotFound();
 
             return Ok(car);
+        }
+        public IEnumerable<Product>
+        {
+            
         }
     }
 }
